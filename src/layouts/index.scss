@@ -1,0 +1,9 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #FBF7EC;
+  z-index: 10;
+  &-mt {
+    height: 80px;
+  }
+}
