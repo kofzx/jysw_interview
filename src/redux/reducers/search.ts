@@ -1,21 +1,19 @@
 import { PayloadAction } from '@reduxjs/toolkit'
-import { SETPARAMS, UPDATE_SEARCH } from '../action-types/search'
+import { UPDATE_LIST } from '../action-types/search'
 
 interface SearchState {
-  value: string;
+  list: any[];
 }
 
 const initState: SearchState = {
-	value: ''
+	list: []
 }
 
 export default function searchReducer(state: SearchState = initState, action: PayloadAction<any>) {
 	const { type, payload } = action
 	switch (type) {
-		case SETPARAMS:
-			return { ...state, param: payload }
-		case UPDATE_SEARCH:
-			return { ...state, keywords: payload }
+		case UPDATE_LIST:
+			return { ...state, list: payload }
 		default:
 			return state
 	}

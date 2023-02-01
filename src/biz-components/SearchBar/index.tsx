@@ -2,21 +2,24 @@ import React, { useState } from 'react'
 import { Box, Grid, IconButton, OutlinedInput } from '@mui/material'
 import { Search } from '@mui/icons-material';
 import './index.scss'
-import { useSelector } from 'react-redux';
+import { fetchList } from '../../redux/actions/search'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [inputVal, setInputVal]= useState('')
-  const searchValue = useSelector((state: any) => state.value)
-  console.log('searchValue: ', searchValue)
 
   const handleChange = (e: any) => {
     setInputVal(e.target.value)
   }
 
   const handleSearch = () => {
-    console.log('inputVal', inputVal)
     if (inputVal) {
-      
+      dispatch(fetchList(inputVal) as any)
+      // 将搜索参数的空格替换为 '+' 代入路由
+      navigate(`/search/${inputVal.replace(/\s/g, "+")}`)
     }
   }
 

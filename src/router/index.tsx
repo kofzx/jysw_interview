@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import Home from '../views/home';
+import HomePage from '../views/home';
 import ErrorPage from '../views/error-page';
 import DefaultLayout from '../layouts/default';
 import SearchPage from '../views/search/index';
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "/search/:keywords",

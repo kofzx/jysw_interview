@@ -12,7 +12,7 @@ function DefaultLayout() {
         <div className='header'>
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} my={1}>
-              <Grid item xs={3}>
+              <Grid item xs={3} sx={{ cursor: 'pointer' }}>
                 <Typography variant="h4" ml={4}>
                   <b>Best</b>Search
                 </Typography>
