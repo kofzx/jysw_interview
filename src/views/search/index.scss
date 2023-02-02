@@ -1,0 +1,33 @@
+.search-page {
+  width: 100%;
+
+  .skeleton-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .skeleton-card {
+      width: 21%;
+      margin: 12px 2%;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .skeleton-wrapper {
+      .skeleton-card {
+        width: 42%;
+        margin: 12px 4%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .skeleton-wrapper {
+      .skeleton-card {
+        width: 90%;
+        margin: 12px 5%;
+      }
+    }
+  }
+
+}
