@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Grid, Typography, Box, Container, Divider } from '@mui/material';
 import SearchBar from '../biz-components/SearchBar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import './index.scss'
 
 
 function DefaultLayout() {
+  const location = useLocation()
+  const isInSearchRoute = useMemo(() => /search/.test(location.pathname), [location])
+
   return (
     <>
       <div className='header-mt'>
@@ -18,7 +21,9 @@ function DefaultLayout() {
                 </Typography>
               </Grid>
               <Grid item xs={9}>
-                <SearchBar />
+                {
+                  isInSearchRoute && <SearchBar />
+                }
               </Grid>
             </Grid>
           </Box>
